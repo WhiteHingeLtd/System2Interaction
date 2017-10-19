@@ -43,7 +43,7 @@ namespace System2Interaction
 
         public static async Task<bool> GenerateAllPicklists(int employeeId, int warehouse)
         {
-            var url = $"Picking/GeneratePicklists?employeeId={employeeId}&warehouse={warehouse}";
+            var url = $"/Picking/GeneratePicklists?employeeId={employeeId}&warehouse={warehouse}";
             var request = (HttpWebRequest)WebRequest.Create(new Uri(ApiUrl + url));
             request.ContentType = "application/json";
             request.Method = "POST";
