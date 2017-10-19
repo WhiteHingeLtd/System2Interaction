@@ -1,9 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Owen Hamer</Authors>
+    <Company>White Hinge Ltd</Company>
+    <Product>System 2.0</Product>
+    <PackageProjectUrl>https://github.com/WhiteHingeLtd/System2Interaction</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WhiteHingeLtd/System2Interaction</RepositoryUrl>
+    <Version>1.0.1.0-alpha</Version>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SPC.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="WhiteHingeFramework" Version="1.0.2.11-alpha" />
+    <PackageReference Include="WhiteHingeFramework">
+      <Version>1.0.3-alpha</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
