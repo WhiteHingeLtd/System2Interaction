@@ -63,4 +63,29 @@ namespace System2Interaction
             
         }
     }
+
+    public static class LoginFactory
+    {
+        private const string ApiUrl = "http://sqlserver.ad.whitehinge.com/Sys2/";
+        public static async Task<NewEmployee> LogUserInAsync(int employeeId)
+        {
+            var url = $"SQLServer/WithUserID?logintext={employeeId}";
+            var request = (HttpWebRequest)WebRequest.Create(new Uri(ApiUrl + url));
+            request.ContentType = "application/json";
+            request.Method = "POST";
+            request.ContentLength = 0;
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
+            string responseText;
+            using (var response = await request.GetResponseAsync())
+            {
+                using (var stream = response.GetResponseStream())
+                {
+                    responseText = await new StreamReader(stream).ReadToEndAsync();
+                }
+            }
+            ReturnObject<NewEmployee> returnedData = JsonConvert.DeserializeObject<ReturnObject<NewEmployee>>(responseText);
+            return (NewEmployee) returnedData.ReturnData;
+        }
+    }
 }

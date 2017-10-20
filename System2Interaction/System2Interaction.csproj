@@ -7,7 +7,7 @@
     <Product>System 2.0</Product>
     <PackageProjectUrl>https://github.com/WhiteHingeLtd/System2Interaction</PackageProjectUrl>
     <RepositoryUrl>https://github.com/WhiteHingeLtd/System2Interaction</RepositoryUrl>
-    <Version>1.0.1.0-alpha</Version>
+    <Version>1.0.1.1-alpha</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SPC.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
