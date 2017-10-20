@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -7,14 +7,12 @@
     <Product>System 2.0</Product>
     <PackageProjectUrl>https://github.com/WhiteHingeLtd/System2Interaction</PackageProjectUrl>
     <RepositoryUrl>https://github.com/WhiteHingeLtd/System2Interaction</RepositoryUrl>
-    <Version>1.0.1.1-alpha</Version>
+    <Version>1.0.1.2-alpha</Version>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>SPC.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="WhiteHingeFramework">
-      <Version>1.0.3-alpha</Version>
-    </PackageReference>
+    <PackageReference Include="WhiteHingeFramework" Version="1.0.3.2-alpha" />
   </ItemGroup>
 </Project>

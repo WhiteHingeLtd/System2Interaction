@@ -38,7 +38,7 @@ namespace System2Interaction
                 }
             }
             ReturnObject<Picklist> returnedData = JsonConvert.DeserializeObject<ReturnObject<Picklist>>(responseText);
-            return (Picklist) returnedData.ReturnData;
+            return JsonConvert.DeserializeObject<Picklist>(returnedData.ReturnData.ToString());
         }
 
         public static async Task<bool> GenerateAllPicklists(int employeeId, int warehouse)
@@ -85,7 +85,8 @@ namespace System2Interaction
                 }
             }
             ReturnObject<NewEmployee> returnedData = JsonConvert.DeserializeObject<ReturnObject<NewEmployee>>(responseText);
-            return (NewEmployee) returnedData.ReturnData;
+            NewEmployee returnable = JsonConvert.DeserializeObject<NewEmployee>(returnedData.ReturnData.ToString());
+            return returnable;
         }
     }
 }
