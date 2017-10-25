@@ -7,11 +7,11 @@ namespace System2Interaction
 {
     public static class RequestFactory
     {
-        public static async Task<string> MakeRequest(Uri requestAddress)
+        public static async Task<string> MakeRequest(Uri requestAddress, string method = "POST")
         {
             var request = (HttpWebRequest)WebRequest.Create(requestAddress);
             request.ContentType = "application/json";
-            request.Method = "POST";
+            request.Method = method;
             request.ContentLength = 0;
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 

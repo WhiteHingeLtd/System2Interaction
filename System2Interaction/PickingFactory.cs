@@ -29,7 +29,7 @@ namespace System2Interaction
                     responseText = await new StreamReader(stream).ReadToEndAsync();
                 }
             }
-            ReturnObject<string> returnedData = JsonConvert.DeserializeObject<ReturnObject<string>>(responseText);
+            var returnedData = JsonConvert.DeserializeObject<ReturnObject<string>>(responseText);
             if (returnedData.Success)
             {
                 var information =

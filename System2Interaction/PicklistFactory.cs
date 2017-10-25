@@ -43,7 +43,7 @@ namespace System2Interaction
 
             var responseText = await RequestFactory.MakeRequest(new Uri(ApiUrl + url));
 
-            ReturnObject<bool> returnedData = JsonConvert.DeserializeObject<ReturnObject<bool>>(responseText);
+            var returnedData = JsonConvert.DeserializeObject<ReturnObject<bool>>(responseText);
             if (!returnedData.Success)
             {
                 throw JsonConvert.DeserializeObject<Exception>(returnedData.ReturnData.ToString());
@@ -67,7 +67,7 @@ namespace System2Interaction
 
             var responseText = await RequestFactory.MakeRequest(new Uri(ApiUrl + url));
 
-            ReturnObject<object> returnedData = JsonConvert.DeserializeObject<ReturnObject<object>>(responseText);
+            var returnedData = JsonConvert.DeserializeObject<ReturnObject<object>>(responseText);
             if (!returnedData.Success)
             {
                 throw JsonConvert.DeserializeObject<Exception>(returnedData.ReturnData.ToString());
@@ -100,7 +100,7 @@ namespace System2Interaction
                     responseText = await new StreamReader(stream).ReadToEndAsync();
                 }
             }
-            ReturnObject<object> returnedData = JsonConvert.DeserializeObject<ReturnObject<object>>(responseText);
+            var returnedData = JsonConvert.DeserializeObject<ReturnObject<object>>(responseText);
             if (!returnedData.Success)
             {
                 throw JsonConvert.DeserializeObject<Exception>(returnedData.ReturnData.ToString());
@@ -121,8 +121,8 @@ namespace System2Interaction
 
             var responseText = await RequestFactory.MakeRequest(new Uri(ApiUrl + url));
             
-            ReturnObject<NewEmployee> returnedData = JsonConvert.DeserializeObject<ReturnObject<NewEmployee>>(responseText);
-            NewEmployee returnable = JsonConvert.DeserializeObject<NewEmployee>(returnedData.ReturnData.ToString());
+            var returnedData = JsonConvert.DeserializeObject<ReturnObject<NewEmployee>>(responseText);
+            var returnable = JsonConvert.DeserializeObject<NewEmployee>(returnedData.ReturnData.ToString());
             return returnable;
         }
     }
