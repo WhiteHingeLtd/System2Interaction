@@ -4,6 +4,8 @@ using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WhiteHingeFramework.Classes;
+using WhiteHingeFramework.Classes.EmployeeData;
+using WhiteHingeFramework.Classes.Orders;
 using WhiteHingeFramework.Classes.Picking;
 using WhiteHingeFramework.Exceptions;
 
