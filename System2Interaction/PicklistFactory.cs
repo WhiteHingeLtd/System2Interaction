@@ -39,9 +39,9 @@ namespace System2Interaction
             return returnedPicklist;
         }
 
-        public static async Task<bool> GenerateAllPicklists(int employeeId, int warehouse)
+        public static async Task<bool> GenerateAllPicklists(int warehouse)
         {
-            var url = $"/Picking/GeneratePicklists?employeeId={employeeId}&warehouse={warehouse}";
+            var url = $"/Picking/GeneratePicklists?warehouse={warehouse}";
 
             var responseText = await RequestFactory.MakeRequest(new Uri(ApiUrl + url));
 
