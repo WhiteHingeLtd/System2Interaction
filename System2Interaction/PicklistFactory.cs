@@ -13,7 +13,7 @@ namespace System2Interaction
 {
     public static class PicklistFactory
     {
-        private const string ApiUrl = @"http://10.20.0.153/WebApiPrecomp";
+        private const string ApiUrl = @"http://sqlserver.ad.whitehinge.com/sys2";
         /// <summary>
         /// 
         /// </summary>
@@ -41,7 +41,7 @@ namespace System2Interaction
 
         public static async Task<bool> GenerateAllPicklists(int warehouse)
         {
-            var url = $"/Picking/GeneratePicklists?warehouse={warehouse}";
+            var url = $"/Picking/GeneratePicklists?warehouseEnum={warehouse}";
 
             var responseText = await RequestFactory.MakeRequest(new Uri(ApiUrl + url));
 
