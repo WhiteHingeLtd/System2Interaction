@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
@@ -31,19 +30,26 @@ namespace System2Interaction
         /// <param name="message"></param>
         public void SendMessage(OrderMessage message)
         {
-            var formattedMessage = FormatMessage(message);
-            var factory = new ConnectionFactory
+            try
             {
-                HostName = _rabbitAddress,
-                UserName = _rabbitUser,
-                Password = _rabbitPassword,
-                VirtualHost = _rabbitVHost
-            };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
+                var formattedMessage = FormatMessage(message);
+                var factory = new ConnectionFactory
+                {
+                    HostName = _rabbitAddress,
+                    UserName = _rabbitUser,
+                    Password = _rabbitPassword,
+                    VirtualHost = _rabbitVHost
+                };
+                using (var connection = factory.CreateConnection())
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare("OrderUpdates", false, false, false, null);
+                    channel.BasicPublish("", "OrderUpdates", null, formattedMessage);
+                }
+            }
+            catch (Exception e)
             {
-                channel.QueueDeclare("OrderUpdates", false, false, false, null);
-                channel.BasicPublish("", "OrderUpdates", null, formattedMessage);
+                Console.WriteLine(e);
             }
         }
 
