@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/WhiteHingeLtd/System2Interaction</RepositoryUrl>
     <Version>1.1.4.0-alpha</Version>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>WhiteHingeCoreKey.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Snek.snk</AssemblyOriginatorKeyFile>
     <AssemblyVersion>1.1.4.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
