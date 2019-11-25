@@ -13,8 +13,8 @@
     <AssemblyVersion>1.1.4.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="RabbitMQ.Client" Version="5.1.1" />
-    <PackageReference Include="WhiteHingeFramework" Version="1.1.9.3-alpha" />
+    <PackageReference Include="WhiteHingeFramework" Version="1.2.20191030.1" />
   </ItemGroup>
 </Project>
