@@ -13,6 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  archiveName : 'System2Interaction.1.7.$(Build.BuildNumber)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -40,7 +41,7 @@ steps:
     packagesToPack: '**/System2Interaction*.csproj'
     configuration: 'Release'
     versioningScheme: 'byEnvVar'
-    versionEnvVar: 'nugetversion'
+    versionEnvVar: 'archiveName'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'push'
