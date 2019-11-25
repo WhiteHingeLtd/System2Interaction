@@ -13,7 +13,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  archiveName : 'System2Interaction.1.7.$(Build.BuildNumber)'
+  archiveName : '1.7.$(Build.BuildNumber)'
 
 steps:
 - task: NuGetToolInstaller@1
